@@ -4,8 +4,8 @@ author: "Put your name here!"
 date: "put the date here"
 output: 
   html_document:
-    number_sections: true
     toc: true
+    toc_depth: 5
 
 ---
 
@@ -13,9 +13,8 @@ output:
 require(tidyverse)
 require(tigerstats)
 require(forcats)
-OldData <-read.csv(file="covid91.csv",header=TRUE)
-#recode to remove the annoying "X" from the dataframe
-FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none = "OK" )) %>% select(-one_of("X"))
+TheData <-read.csv(file="fall21.csv",header=TRUE)
+TheData <- TheData %>% mutate(across(where(is.character),as.factor))
 ```
 
 # Introduction
