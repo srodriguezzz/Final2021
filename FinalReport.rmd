@@ -40,7 +40,11 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+This plot represents the population of males people and the relationship to the contraction of COVID-19 by either taking the vaccine or the placebo. 
 
+The plot above shows that a shocking 58% of people that took the vaccine did in fact get COIVD-19, while only approximately 42% of those who took the placebo contracted it. A substantially higher percentage of people who took the vaccine contracted COVID-1 compared to those who didn't. The odds of getting COVID-19 while taking the vaccine is 3:2. The men that took the drug were one and a half times more likely to get COVID-19 than those taking the placebo. 
+
+There are two plots. In the first plot, the x axis represents infected, whether the participants were infected with COVID-19 or not. The y-axis represents the count, or number of people that got COVID-19 or not. 
 
 
 # Females
@@ -57,6 +61,8 @@ colPerc(table1)
 ```
 
 
+There are two tables for this test. The first table shows the number of guys and gals who took the vaccine and those who took the placebo. The second table shows the number of guys and gals who were and weren't infected by COVID-19. 
+
 
 # Drug Users
 
@@ -65,6 +71,8 @@ table1 <- xtabs(~DrugUser + infected, data=TheData)
 rowPerc(table1)
 ```
 
+This table shows the number of drug users that have and have not contracted COVID-19.The numbers of those who are "OK" are incredibly higher than those who contracted it. 
+
 # LGBTQ
 
 ```{r}
@@ -72,6 +80,9 @@ table1 <- xtabs(~LGBTQ + infected, data=TheData)
 rowPerc(table2)
 colPerc(table2)
 ```
+
+
+This table shows the way the vaccine and placebo affected those of the LGBTQ community. There were no significant difference in these numbers. 
 
 # Conclusions and recommendations
 
